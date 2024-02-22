@@ -1,0 +1,8 @@
+// for middle node findinf , fast and slow pointer
+// for deleting nth node from end, same two pointers with one pointer n nodes ahead of another
+//weak topic = reverse singly linked list, recursive reverse single linked list
+// while(curr!= NULL && curr->next != NULL) --we put curr != NULl because if curr is null and we try to access curr->next we get segmentation error or runtime error in c++;
+// question 39 - reverse in group of size k
+//detect loop all  methods
+//floyd alogrithm for loop detechtion and removal
+// in segregate even odd, why the auxilary space was 1 and not n;

@@ -1,0 +1,32 @@
+LINKED_LIST:
+
+// for middle node findinf , fast and slow pointer
+// for deleting nth node from end, same two pointers with one pointer n nodes ahead of another
+//weak topic = reverse singly linked list, recursive reverse single linked list
+// while(curr!= NULL && curr->next != NULL) --we put curr != NULl because if curr is null and we try to access curr->next we get segmentation error or runtime error in c++;
+// question 39 - reverse in group of size k
+//detect loop all  methods
+//floyd alogrithm for loop detechtion and removal
+// in segregate even odd, why the auxilary space was 1 and not n;
+
+STACK:
+stack can be implemented using vector,list,dequeue, therfore it is called container adapter.By default it is implemented using deque container. queue/priority queue are also container adapter.
+stack can be implemented on any underlying container that can provide :back(), size(), empty(),push_back(), pop_back().
+using stack by class: stack <int> s;// #include <stack>
+questions to revise:
+	k stacks in an array.
+	stock span problem.
+	histogram largest area.
+	largest rectangle with all 1's.
+	getMin() in O(1).
+
+QUEUE:
+queue can be implemented using list, deque.By default it is implemented using deque.
+questions : 8 and 9.
+
+TREE:
+learn the recursion trick used to find the height of binary tree.
+kth node me phle null check kro then k ==0 otherwise null->value operate hoga.
+why we cannot construct tree from pre and post order, why we need inorder. construct question
+
+//g++ exp.cpp -o exp && ./exp
