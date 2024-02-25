@@ -4,38 +4,34 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void printVector(vector <int> v){
-    for(int i =0 ; i<v.size(); i++){
-        cout << v[i] << " ";
-    }
-}
 
-vector<int> nextGreater(int arr[],int n){
-    for(int i=0;i<n;i++){
-        cout << arr[i] << " ";
-    };
-    cout <<endl;
-    vector <int> v;
-    stack <int> s;
-    s.push(n-1);
-    // cout << "-1" << " ";
-    v.push_back(-1);
-    for(int i=n-2 ; i>-1 ;i--){
-        while(s.empty()==false && arr[s.top()]<=arr[i]){
-            s.pop();
+
+class Solution {
+public:
+    vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
+        int n = nums2.size();
+        vector<int>ans(n,-1);
+        stack<int>st;
+
+        // finding the next greater element of each element of nums2;
+        for(int i = n-1; i>=0; i--){
+            while(!st.empty() && nums2[st.top()]<nums2[i]) st.pop();
+            if(st.size()>0) ans[i] = nums2[st.top()];
+            st.push(i);
         }
-        int ng =s.empty()?-1 : arr[s.top()];
-        v.push_back(ng);
-        // cout << ng << " ";
-        s.push(i);
-    }
-    reverse(v.begin(),v.end());
-    return v;
-}
 
-int main(){
-    int arr[5]={3,13,2,34,23};
-    // vector <int > res = nextGreater(arr,5);
-    printVector(nextGreater(arr,5));
-    return 0;
-}
+        // storing each next greater element into the map
+        unordered_map<int,int>mpp;
+        for(int i = 0; i<nums2.size(); i++) mpp[nums2[i]] = ans[i];
+
+        // creating the final ans;
+        vector<int>final(nums1.size(), -1);
+        for(int i = 0; i<nums1.size(); i++){
+            if(mpp.find(nums1[i]) != mpp.end()){
+                final[i] = mpp[nums1[i]];
+            }
+        }
+
+        return final;
+    }
+};
