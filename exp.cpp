@@ -1,1 +1,0 @@
-import numpy as np   # import numpy , for numpy installation use pip install numpy
