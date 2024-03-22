@@ -13,11 +13,11 @@ struct node{
 };
 
 void inorder(node *root){
-    if(root!=NULL) {  
-        inorder(root->left);
-        cout << root->key << " ";
-        inorder(root->right); 
-    }
+    if(root == NULL) return;
+    inorder(root->left);
+    cout << root->key << " ";
+    inorder(root->right);
+    
 };
 
 int main(){
