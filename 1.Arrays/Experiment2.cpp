@@ -1,37 +1,20 @@
 #include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-int binary_search(int arr[], int size, int target) {
-    int left = 0;
-    int right = size - 1;
 
-    while (left <= right) {
-        int mid = left + (right - left) / 2;
-
-        if (arr[mid] == target)
-            return mid;
-
-        else if (arr[mid] < target)
-            left = mid + 1;
-
-        else
-            right = mid - 1;
-    }
-
-    return -1;
+string experiment(int x) {
+    int a=0;
+    a=a>>1;
+    cout <<a<<" " << endl;
+    return "a";
+    
 }
 
 int main() {
-    int arr[] = {2, 3, 4, 10, 40};
+    int arr[] = {1,2,3,4,5,6,7,9,10};
     int size = sizeof(arr) / sizeof(arr[0]);
-    int target = 10;
-
-    int result = binary_search(arr, size, target);
-
-    if (result != -1)
-        cout << "Element " << target << " is present at index " << result << endl;
-    else
-        cout << "Element is not present in the array" << endl;
-
-    return 0;
+    int target = 8;
+    // cout << size << endl;
+    cout << experiment(13) << endl; 
 }
