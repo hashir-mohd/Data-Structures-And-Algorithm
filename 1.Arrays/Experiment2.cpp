@@ -15,6 +15,8 @@ int main() {
     int arr[] = {1,2,3,4,5,6,7,9,10};
     int size = sizeof(arr) / sizeof(arr[0]);
     int target = 8;
+    int a = 3;
+    int b = a<<3;
     // cout << size << endl;
-    cout << experiment(13) << endl; 
+    cout << b<< endl;
 }
